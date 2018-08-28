@@ -1,5 +1,6 @@
 import objetos.*
-
+import personas.*
+41
 object bolichito {
 	var objetoEnMostrador
 	var objetoEnVidriera
@@ -7,10 +8,8 @@ object bolichito {
 	method ponerEnMostrador(objeto) { objetoEnMostrador = objeto }
 	method ponerEnVidriera(objeto) { objetoEnVidriera = objeto }
 	
-	method esBrillante() { 
-		const elDeMostradorBrilla = true   // implementar
-		const elDeVidrieraBrilla = true   // implementar
-		return elDeMostradorBrilla and elDeVidrieraBrilla
+	method esBrillante() {     
+		return (objetoEnMostrador.brilla()) and (objetoEnVidriera.brilla())
 	}
 	
 	method esMonocromatico() {
@@ -18,14 +17,15 @@ object bolichito {
 	}
 	
 	method estaDesequilibrado() {
-		// completar
+		return objetoEnMostrador.color()>objetoEnVidriera.color()
 	}
 	
 	method tieneAlgoDeColor(color) {
-		// completar
+		
 	}
 
 	method puedeOfrecerleAlgoA(persona) {
-		// completar
+		return persona.leGusta(objetoEnMostrador) 
+		return persona.leGusta(objetoEnVidriera)
 	}
 }
