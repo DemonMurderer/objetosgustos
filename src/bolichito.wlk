@@ -1,6 +1,6 @@
 import objetos.*
 import personas.*
-41
+
 object bolichito {
 	var objetoEnMostrador
 	var objetoEnVidriera
@@ -21,11 +21,10 @@ object bolichito {
 	}
 	
 	method tieneAlgoDeColor(color) {
-		
+		return (objetoEnMostrador.color() == color) or (objetoEnVidriera.color() == color)
 	}
 
 	method puedeOfrecerleAlgoA(persona) {
-		return persona.leGusta(objetoEnMostrador) 
-		return persona.leGusta(objetoEnVidriera)
+		return persona.leGusta(objetoEnMostrador) or persona.leGusta(objetoEnVidriera)
 	}
 }
